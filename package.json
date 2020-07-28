@@ -1,0 +1,22 @@
+{
+  "name": "@white-rabbit-ai-inc/dynamo-ops",
+  "version": "1.0.0",
+  "description": "Basic CRUD operations for Dynamo DB",
+  "main": "dynamo-ops.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/white-rabbit-ai-inc/dynamo-ops.git"
+  },
+  "author": "Venkateshwaran Loganathan",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/white-rabbit-ai-inc/dynamo-ops/issues"
+  },
+  "homepage": "https://github.com/white-rabbit-ai-inc/dynamo-ops#readme",
+  "publishConfig": { 
+    "registry": "https://npm.pkg.github.com/" 
+  }
+}
