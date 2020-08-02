@@ -60,3 +60,30 @@ export const insertItem = async (docClient, tableName, item) => {
     console.log('end result...')
     return result;
   }
+
+  export const updateItem = async (docClient, tableName, data, id, idField = 'id') => {
+
+    let params = {
+        TableName: tableName,
+        Key: {},
+        UpdateExpression: "set ",
+        ExpressionAttributeValues: {},
+        ExpressionAttributeNames: {},
+        ReturnValues: "ALL_NEW"
+    };
+  
+    params.Key[idField] = id
+
+    let expressionValues = []
+    Object.keys(data).forEach((key) => {
+        expressionValues.push(`#${key} = :${key}`)
+        params.ExpressionAttributeNames[`#${key}`] = key
+        params.ExpressionAttributeValues[`:${key}`] = data[key]
+    })
+
+    params.UpdateExpression += expressionValues.join()
+
+    let result = await docClient.update(params).promise()
+
+    return result
+  }
