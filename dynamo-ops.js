@@ -54,7 +54,7 @@ export const insertItem = async (docClient, tableName, item) => {
     params.Item = Object.assign(params.Item, item)
     console.log(`params: ${JSON.stringify(params)}`)
 
-    let result = docClient.put(params).promise()
+    let result = await docClient.put(params).promise()
     console.log('result...')
     console.log(result)
     console.log('end result...')
