@@ -1,4 +1,21 @@
-export const getItems = async (tableName,docClient) => {
+export const getItem = async (docClient, tableName, field, value) => {
+    let params = {
+        TableName: tableName,
+        Select: "ALL_ATTRIBUTES",
+        FilterExpression: " #f=:f",
+        ExpressionAttributeValues: {
+            ":f": value
+        },
+        ExpressionAttributeNames: {
+            "#f": field
+        }
+    };
+
+    return await  docClient.scan(params).promise()
+    
+};
+
+export const getItems = async (tableName, docClient) => {
     let params = {
         TableName: tableName,
         Select: "ALL_ATTRIBUTES"
@@ -30,7 +47,7 @@ export const getItemById = async (docClient, tableName, id, idField = 'id') => {
     var params = {
         TableName: tableName,
         KeyConditionExpression: '#id=:id',
-        ExpressionAttributeValues: {    
+        ExpressionAttributeValues: {
             ":id": id
         },
         ExpressionAttributeNames: {
@@ -47,10 +64,10 @@ export const getItemById = async (docClient, tableName, id, idField = 'id') => {
 
 export const insertItem = async (docClient, tableName, item) => {
     let params = {
-      TableName: tableName,
-      Item: {}
+        TableName: tableName,
+        Item: {}
     }
-  
+
     params.Item = Object.assign(params.Item, item)
     console.log(`params: ${JSON.stringify(params)}`)
 
@@ -59,9 +76,9 @@ export const insertItem = async (docClient, tableName, item) => {
     console.log(result)
     console.log('end result...')
     return result;
-  }
+}
 
-  export const updateItem = async (docClient, tableName, data, id, idField = 'id') => {
+export const updateItem = async (docClient, tableName, data, id, idField = 'id') => {
 
     let params = {
         TableName: tableName,
@@ -71,7 +88,7 @@ export const insertItem = async (docClient, tableName, item) => {
         ExpressionAttributeNames: {},
         ReturnValues: "ALL_NEW"
     };
-  
+
     params.Key[idField] = id
 
     let expressionValues = []
@@ -86,4 +103,4 @@ export const insertItem = async (docClient, tableName, item) => {
     let result = await docClient.update(params).promise()
 
     return result
-  }
+}
