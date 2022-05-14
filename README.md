@@ -29,7 +29,7 @@ getItems
    | docClient  | <code>DocumentClient</code> | AWS Dynamodb DocumentClient |
    | tableName | <code>string</code> | table name string     |
    | id  | <code>string</code> | id field value |
-   | idField | <code>string</code> | search field name    |
+   | idField | <code>string</code> | id field name    |
    | rangeId  | <code>string</code> | rangeId field value |
    | rangeIdField | <code>string</code> | rangeIdField field name    |  
 
@@ -51,7 +51,7 @@ updateItem
    | tableName | <code>string</code> | table name string     |
    | data | <code>object</code> | data to update with     |
    | id  | <code>string</code> | id field value |
-   | idField | <code>string</code> | search field name    |
+   | idField | <code>string</code> | id field name    |
 
    <br/>
 deleteItem
