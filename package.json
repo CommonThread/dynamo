@@ -1,5 +1,5 @@
 {
-  "name": "@white-rabbit-ai-inc/dynamo-ops",
+  "name": "@commonthread/dynamodb-crud",
   "version": "1.0.0",
   "description": "Basic CRUD operations for Dynamo DB",
   "main": "dynamo-ops.js",
@@ -8,15 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/white-rabbit-ai-inc/dynamo-ops.git"
+    "url": "git@github.com:CommonThread/dynamo.git"
   },
-  "author": "Venkateshwaran Loganathan",
-  "license": "UNLICENSED",
+  "author": "Tim Gosnell",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/white-rabbit-ai-inc/dynamo-ops/issues"
+    "url": "https://github.com/CommonThread/dynamo/issues"
   },
-  "homepage": "https://github.com/white-rabbit-ai-inc/dynamo-ops#readme",
-  "publishConfig": { 
-    "registry": "https://npm.pkg.github.com/" 
-  }
+  "homepage": "https://github.com/CommonThread/dynamo/blob/master/README.md"
 }

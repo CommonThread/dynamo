@@ -1,8 +1,10 @@
-# dynamo-ops
-Basic CRUD operations for dynamo DB
+# dynamodb-crud
+Basic CRUD operations for dynamo DB  
 
+Source available [here](https://github.com/CommonThread/dynamo)
 
-- getItem 
+   <br/>
+getItem 
 
    | Param  | Type                | Description  |
    | ------ | ------------------- | ------------ |
@@ -10,15 +12,17 @@ Basic CRUD operations for dynamo DB
    | tableName | <code>string</code> | table name string     |
    | field  | <code>string</code> | search field name |
    | value | <code>string</code> | search field value    |
-   
-- getItems
+
+   <br/>
+getItems
 
    | Param  | Type                | Description  |
    | ------ | ------------------- | ------------ |
    | docClient  | <code>DocumentClient</code> | AWS Dynamodb DocumentClient |
    | tableName | <code>string</code> | table name string     |
-   
-- getItemById
+
+   <br/>
+   getItemById
 
    | Param  | Type                | Description  |
    | ------ | ------------------- | ------------ |
@@ -27,11 +31,10 @@ Basic CRUD operations for dynamo DB
    | id  | <code>string</code> | id field value |
    | idField | <code>string</code> | search field name    |
    | rangeId  | <code>string</code> | rangeId field value |
-   | rangeIdField | <code>string</code> | rangeIdField field name    |
+   | rangeIdField | <code>string</code> | rangeIdField field name    |  
 
-   docClient, tableName, id, idField = 'id', rangeId, rangeIdField = 'rangeId'
-
-- insertItem
+   <br/>
+insertItem
 
    | Param  | Type                | Description  |
    | ------ | ------------------- | ------------ |
@@ -39,7 +42,8 @@ Basic CRUD operations for dynamo DB
    | tableName | <code>string</code> | table name string     |
    | item  | <code>object</code> | object to insert |
 
-- updateItem
+   <br/>
+updateItem
 
    | Param  | Type                | Description  |
    | ------ | ------------------- | ------------ |
@@ -49,7 +53,8 @@ Basic CRUD operations for dynamo DB
    | id  | <code>string</code> | id field value |
    | idField | <code>string</code> | search field name    |
 
-- deleteItem
+   <br/>
+deleteItem
 
    | Param  | Type                | Description  |
    | ------ | ------------------- | ------------ |
@@ -57,3 +62,5 @@ Basic CRUD operations for dynamo DB
    | tableName | <code>string</code> | table name string     |
    | keys  | <code>string array</code> | field names to update |
    | keyValues | <code>string array</code> | field value to update    |
+
+   <br/>
