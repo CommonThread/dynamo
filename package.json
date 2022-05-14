@@ -1,6 +1,6 @@
 {
   "name": "@commonthread/dynamodb-crud",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Basic CRUD operations for Dynamo DB",
   "main": "dynamo-ops.js",
   "scripts": {
